@@ -1,0 +1,4 @@
+name = Rupor.sampo.ru news block
+description = Block with top posts from http://rupor.sampo.ru
+core = 7.x
+files[] = sampo_rupor_block.inc

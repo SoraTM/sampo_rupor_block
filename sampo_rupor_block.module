@@ -1,0 +1,23 @@
+<?php
+
+function sampo_rupor_block_block_info() {
+  $blocks['sampo_rupor'] = array(
+      'info' => 'Rupor posts',
+  );
+
+  return $blocks;
+}
+
+function sampo_rupor_block_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'sampo_rupor':
+      $block['content'] = array(
+          '#theme' => 'feed_icon',
+          '#url' => 'rss.xml',
+          '#title' => t('Rupor'),
+      );
+      break;
+  }
+  return $block;
+}

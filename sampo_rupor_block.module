@@ -12,12 +12,15 @@ function sampo_rupor_block_block_view($delta = '') {
   $block = array();
   switch ($delta) {
     case 'sampo_rupor':
-      $block['content'] = array(
-          '#theme' => 'feed_icon',
-          '#url' => 'rss.xml',
-          '#title' => t('Rupor'),
-      );
+      $block['content'] = _sampo_rupor_block_init();
       break;
   }
   return $block;
+}
+
+function _sampo_rupor_block_init(){
+  // Rupor Informer
+  $rupor = new Rupor();
+  $ruporFeed = $rupor->getFeed();
+  return $ruporFeed;
 }

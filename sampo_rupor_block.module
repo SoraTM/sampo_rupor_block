@@ -1,5 +1,13 @@
 <?php
 
+function sampo_rupor_block_menu() {
+  $items['admin/config/services/sampo-rupor'] = array(
+      'title' => 'Rupor block settings',
+      'description' => 'Settings page for Topics block from http://rupor.sampo.ru',
+      'access arguments' => array('administer site configuration'),);
+  return $items;
+}
+
 function sampo_rupor_block_block_info() {
   $blocks['sampo_rupor'] = array(
       'info' => 'Rupor posts',
@@ -18,7 +26,7 @@ function sampo_rupor_block_block_view($delta = '') {
   return $block;
 }
 
-function _sampo_rupor_block_init(){
+function _sampo_rupor_block_init() {
   // Rupor Informer
   $rupor = new Rupor();
   $ruporFeed = $rupor->getFeed();
